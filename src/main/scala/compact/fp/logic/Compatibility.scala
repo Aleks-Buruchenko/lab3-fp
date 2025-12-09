@@ -4,7 +4,7 @@ import compact.fp.model._
 
 object Compatibility {
 
-  // Какие типы ДОЛЖНЫ быть совместимы друг с другом
+  // Какие типы совместимы друг с другом
   val requiredPairs: Set[(ComponentType, ComponentType)] = Set(
     (CPU, Motherboard),
     (RAM, Motherboard),
@@ -18,7 +18,7 @@ object Compatibility {
       requiredPairs.contains((b.compType, a.compType))
 
   // Совместимость:
-  // - Если пара типов НЕ обязательная — они автоматически совместимы (никаких ошибок!)
+  // - Если пара типов НЕ обязательная — они автоматически совместимы
   // - Если обязательная — проверяем по compatibleIds
   def isCompatible(a: Component, b: Component): Boolean =
     if (!isRequiredPair(a, b)) true
@@ -40,3 +40,4 @@ object Compatibility {
     }
   }
 }
+
