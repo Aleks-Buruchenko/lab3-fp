@@ -1,0 +1,5 @@
+cpu1,Intel i5-9600,Intel,cpu,mother1
+mother1,Asus B450,Asus,motherboard,cpu1 ram1 gpu1 storage1
+ram1,8GB DDR4,Kingston,ram,mother1
+gpu1,NVIDIA GTX 1660,MSI,gpu,mother1
+storage1,Kingston 1TB,Kingston,storage,mother1
