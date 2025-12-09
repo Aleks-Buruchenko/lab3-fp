@@ -12,12 +12,6 @@ object Main extends App {
   val lines = Input.readLines().takeWhile(_.nonEmpty)
   val components = lines.flatMap(Parser.parse).toList
 
-  println("DEBUG: Прочитанные строки:")
-  lines.foreach(println)
-
-  println("DEBUG: Спарсенные компоненты:")
-  components.foreach(c => println(s"- ${c.id} ${c.name} (${c.compType})"))
-
   Builder.buildConfiguration(components) match {
     case Right(cfg) =>
       println("\nКонфигурация успешно создана:")
